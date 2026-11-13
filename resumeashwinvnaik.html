@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ASHWIN V NAIK | Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f7ff;color:#263b75;line-height:1.5}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1100px;margin:auto}
+header{position:fixed;top:0;left:0;width:100%;height:65px;background:#6254d9;border-bottom:2px solid #43c5ee;z-index:1000}
+nav{height:65px;display:flex;align-items:center;justify-content:center}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:70px;list-style:none}
+.nav-links li{min-width:100px;text-align:center}
+.nav-links a{color:#fff;font-size:15px;font-weight:bold;padding:8px 5px;position:relative;transition:.3s;cursor:pointer}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:#65e5ff;transition:.3s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a:hover{color:#b9f4ff}
+.page{min-height:100vh;padding:95px 0 45px}
+.hidden{display:none!important}
+#home{background:linear-gradient(135deg,#edf5ff,#e5f2ff);display:flex;align-items:center;min-height:100vh}
+.home{display:flex;align-items:center;justify-content:space-between;gap:50px}
+.home-text{flex:1}
+.small{color:#087fc1;font-weight:bold;letter-spacing:3px}
+.home h1{font-size:60px;line-height:1.1;margin:10px 0;color:#174ea6}
+.home h2{font-size:24px;color:#354f91;font-weight:normal}
+.home p{color:#40577f;margin-top:15px;max-width:600px}
+.buttons{display:flex;gap:12px;margin-top:22px}
+.btn{padding:10px 22px;border-radius:5px;font-size:14px;transition:.3s;cursor:pointer}
+.primary{background:#1769aa;color:#fff;border:1px solid #1769aa}
+.primary:hover{background:#0e4f82}
+.outline{border:1px solid #087fc1;color:#087fc1;background:transparent}
+.outline:hover{background:#1769aa;color:#fff}
+.profile{width:270px;height:270px;border-radius:50%;padding:7px;border:3px solid #087fc1;box-shadow:0 0 22px #4b9de866;flex-shrink:0}
+.profile img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.title{text-align:center;margin-bottom:25px}
+.title h2{font-size:32px;color:#174ea6}
+.title span{color:#087fc1}
+.title p{color:#40577f;font-size:14px}
+#resume{background:#edf3ff}
+.resume{max-width:950px;margin:auto;background:#fff;padding:30px;box-shadow:0 8px 25px #244b8b18;border-radius:8px}
+.resume-head{border-bottom:2px solid #1686cf;padding-bottom:15px}
+.resume-head h1{font-size:30px;color:#174ea6}
+.resume-head h3{color:#087fc1;font-weight:normal}
+.contact{display:flex;flex-wrap:wrap;gap:12px;color:#405477;font-size:13px;margin-top:8px}
+.r-section{margin-top:20px}
+.r-section h2{color:#087fc1;font-size:17px;border-bottom:1px solid #c7d6eb;padding-bottom:5px;margin-bottom:10px;text-transform:uppercase}
+.summary,.item p{font-size:13px;color:#40577f}
+.item{margin-bottom:14px}
+.item h3{font-size:16px;color:#263b75}
+.item h4{color:#087fc1;font-size:13px;font-weight:normal}
+.date{font-size:12px;color:#536b91}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:6px 25px}
+.skill{font-size:13px;padding:5px 0;border-bottom:1px solid #d9e3f2;color:#334b70}
+.skill b{color:#087fc1}
+.tech{color:#087fc1!important;font-size:12px!important;margin-top:4px}
+#biodata{background:#f0f6ff}
+.bio{max-width:950px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.card{background:#fff;border:1px solid #c8d8f5;border-radius:7px;padding:18px}
+.card h3{color:#087fc1;border-bottom:1px solid #c4d5f2;padding-bottom:6px;margin-bottom:8px}
+.row{display:flex;border-bottom:1px solid #d4def0;padding:6px 0;font-size:13px}
+.label{width:40%;font-weight:bold;color:#344d7c}
+.value{width:60%;color:#40577f}
+.contact-card{grid-column:1/-1;background:linear-gradient(120deg,#1769aa,#6254d9);color:#fff;text-align:center;padding:25px;border-radius:7px}
+.contact-card h2{font-size:25px;color:#fff}
+.contact-card p{color:#f0f7ff;margin:6px 0 15px}
+.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:20px}
+.contact-links a{font-size:13px;color:#fff}
+.contact-links a:hover{text-decoration:underline;color:#b9f4ff}
+footer{text-align:center;background:#202b49;color:#f4f7ff;padding:13px;font-size:12px}
+@media(max-width:750px){
+.nav-links{gap:25px}
+.nav-links li{min-width:auto}
+.nav-links a{font-size:13px}
+.home{flex-direction:column-reverse;text-align:center;gap:25px}
+.home h1{font-size:42px}
+.home h2{font-size:20px}
+.buttons{justify-content:center}
+.profile{width:210px;height:210px}
+.resume{padding:22px}
+.skills,.bio{grid-template-columns:1fr}
+.contact-card{grid-column:auto}
+}
+@media(max-width:480px){
+.nav-links{gap:15px}
+.nav-links a{font-size:12px}
+.home h1{font-size:36px}
+.resume{padding:16px}
+.contact{flex-direction:column;gap:3px}
+.row{flex-direction:column}
+.label,.value{width:100%}
+}
+</style>
+</head>
+<body>
+<header>
+<nav class="container">
+<ul class="nav-links">
+<li><a class="nav active" data-page="home">Home</a></li>
+<li><a class="nav" data-page="resume">Resume</a></li>
+<li><a class="nav" data-page="biodata">Bio Data</a></li>
+</ul>
+</nav>
+</header>
+
+<main id="home" class="page">
+<div class="container home">
+<div class="home-text">
+<div class="small">HELLO, I'M</div>
+<h1>Ashwin V Naik</h1>
+<h2>Computer Science Engineer</h2>
+<p>Computer Science Engineering student passionate about software development, web technologies and building practical solutions to real-world problems.</p>
+<div class="buttons">
+<button class="btn primary" onclick="showPage('resume')">View Resume</button>
+<button class="btn outline" onclick="showPage('biodata')">Contact Me</button>
+</div>
+</div>
+<div class="profile">
+<img src="ashwin.jpeg" alt="Ashwin V Naik Profile Photo">
+</div>
+</div>
+</main>
+
+<main id="resume" class="page hidden">
+<div class="container">
+<div class="resume">
+<div class="resume-head">
+<h1>ASHWIN V NAIK</h1>
+<h3>Computer Science Engineer</h3>
+<div class="contact">
+<span>📧 ashwinvnaik33@email.com</span>
+<span>📱 +91 6362223904</span>
+<span>📍 Karnataka, India</span>
+<span>GitHub: github.com/ashwinvnaik</span>
+<span>LinkedIn: www.linkedin.com/in/ashwin-v-naik-72a902</span>
+</div>
+</div>
+
+<div class="r-section">
+<h2>Professional Summary</h2>
+<p class="summary">Computer Science Engineering student with knowledge of programming, web development, databases and software development. Interested in learning new technologies and developing practical applications.</p>
+</div>
+
+<div class="r-section">
+<h2>Education</h2>
+<div class="item">
+<h3>Bachelor of Engineering</h3>
+<h4>Computer Science Engineering</h4>
+<div class="date">2024 – 2028</div>
+<p>VIVEKANANDA COLLEGE OF ENGINEERING AND TECHNOLOGY, KARNATAKA</p>
+<p>CGPA: 8.0 / 10</p>
+</div>
+<div class="item">
+<h3>Pre-University Education</h3>
+<h4>Science</h4>
+<div class="date">2022 – 2024</div>
+<p>VIVEKAKANDA PU COLLEGE PUTTUR, KARNATAKA</p>
+</div>
+<div class="item">
+<h3>Secondary School</h3>
+<div class="date">2022</div>
+<p>GOVERNMENT HIGH SCHOOL SHANTINAGAR, KARNATAKA</p>
+</div>
+</div>
+
+<div class="r-section">
+<h2>Technical Skills</h2>
+<div class="skills">
+<div class="skill"><b>Programming:</b> C, C++, Java, Python</div>
+<div class="skill"><b>Web:</b> HTML, CSS, JavaScript</div>
+<div class="skill"><b>Backend:</b> Python, Flask</div>
+<div class="skill"><b>Database:</b> MySQL, MongoDB</div>
+<div class="skill"><b>Tools:</b> VS Code, Git, GitHub</div>
+<div class="skill"><b>Concepts:</b> DSA, OOP, DBMS, CN</div>
+</div>
+</div>
+
+<div class="r-section">
+<h2>Academic Projects</h2>
+<div class="item">
+<h3>Movie Recommendation System</h3>
+<p>Developed a movie discovery application that allows users to search and filter movies based on language, genre and ratings.</p>
+<p class="tech">HTML · CSS · JavaScript · Python · Flask</p>
+</div>
+<div class="item">
+<h3>Personal Portfolio Website</h3>
+<p>Designed a responsive website to showcase personal information, education, technical skills and academic projects.</p>
+<p class="tech">HTML · CSS · JavaScript</p>
+</div>
+</div>
+
+<div class="r-section">
+<h2>Certifications</h2>
+<div class="item">
+<h3>Python Programming</h3>
+<p>Certification Provider · 2026</p>
+</div>
+<div class="item">
+<h3>Web Development</h3>
+<p>Certification Provider · 2026</p>
+</div>
+</div>
+
+<div class="r-section">
+<h2>Achievements</h2>
+<div class="item">
+<p>• Participated in technical and academic activities.</p>
+<p>• Developed academic software projects.</p>
+<p>• Continuously learning new technologies.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<main id="biodata" class="page hidden">
+<div class="container">
+<div class="title">
+<h2>Bio <span>Data</span></h2>
+<p>Personal information and contact details</p>
+</div>
+
+<div class="bio">
+<div class="card">
+<h3>Personal Details</h3>
+<div class="row"><div class="label">Full Name</div><div class="value">ASHWIN V NAIK</div></div>
+<div class="row"><div class="label">Date of Birth</div><div class="value">31 / 03 / 2006</div></div>
+<div class="row"><div class="label">Gender</div><div class="value">MALE</div></div>
+<div class="row"><div class="label">Nationality</div><div class="value">Indian</div></div>
+<div class="row"><div class="label">Location</div><div class="value">Karnataka, India</div></div>
+</div>
+
+<div class="card">
+<h3>Additional Details</h3>
+<div class="row"><div class="label">Languages</div><div class="value">English, Kannada, Hindi</div></div>
+<div class="row"><div class="label">Interests</div><div class="value">Technology, Coding, Music</div></div>
+<div class="row"><div class="label">Strengths</div><div class="value">Problem Solving, Teamwork</div></div>
+<div class="row"><div class="label">Career Goal</div><div class="value">Software Developer</div></div>
+<div class="row"><div class="label">Availability</div><div class="value">Open to Opportunities</div></div>
+</div>
+
+<div class="contact-card">
+<h2>Let's Connect</h2>
+<p>Open to internships, projects, collaborations and career opportunities.</p>
+<div class="contact-links">
+<a href="mailto:ashwinvnaik33@email.com">📧 ashwinvnaik33@email.com</a>
+<a href="tel:+916362223904">📱 +91 6362223904</a>
+<a href="https://www.linkedin.com/in/ashwin-v-naik-72a902" target="_blank">🔗 LinkedIn</a>
+<a href="https://github.com/ashwinvnaik" target="_blank">💻 GitHub</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<footer>© 2026 Ashwin V Naik · Professional Resume</footer>
+
+<script>
+function showPage(page){
+const pages=["home","resume","biodata"];
+pages.forEach(function(id){
+document.getElementById(id).classList.add("hidden");
+});
+document.getElementById(page).classList.remove("hidden");
+document.querySelectorAll(".nav").forEach(function(link){
+link.classList.remove("active");
+if(link.dataset.page===page){
+link.classList.add("active");
+}
+});
+window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll(".nav").forEach(function(link){
+link.addEventListener("click",function(){
+showPage(this.dataset.page);
+});
+});
+</script>
+</body>
+</html>
