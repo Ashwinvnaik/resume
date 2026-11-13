@@ -1,0 +1,486 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f6f8;
+color:#222;
+line-height:1.6
+}
+
+a{
+text-decoration:none;
+color:inherit
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto
+}
+
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:65px;
+background:#7063e6;
+border-bottom:1px solid #5fa8da;
+z-index:1000
+}
+
+nav{
+height:65px;
+display:flex;
+align-items:center;
+justify-content:center
+}
+
+.logo{
+display:none
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:70px;
+list-style:none
+}
+
+.nav-links li{
+min-width:100px;
+text-align:center
+}
+
+.nav-links a{
+color:#fff;
+font-size:15px;
+font-weight:600;
+padding:8px 5px;
+position:relative;
+transition:.3s
+}
+
+.nav-links a:after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:0;
+height:2px;
+background:#fff;
+transition:.3s
+}
+
+.nav-links a:hover:after{
+width:100%
+}
+
+
+/* GENERAL */
+
+section{
+min-height:100vh;
+padding:110px 0 70px
+}
+
+.title{
+text-align:center;
+margin-bottom:40px
+}
+
+.title h2{
+font-size:32px
+}
+
+.title span{
+color:#1769aa
+}
+
+.title p{
+color:#777;
+font-size:14px
+}
+
+
+/* HOME */
+
+#home{
+background:#fff;
+display:flex;
+align-items:center
+}
+
+.home{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px
+}
+
+.home-text{
+flex:1
+}
+
+.small{
+color:#1769aa;
+font-weight:bold;
+letter-spacing:3px
+}
+
+.home h1{
+font-size:60px;
+line-height:1.1;
+margin:12px 0
+}
+
+.home h2{
+font-size:24px;
+color:#555;
+font-weight:normal
+}
+
+.home p{
+color:#777;
+margin-top:18px;
+max-width:600px
+}
+
+.buttons{
+display:flex;
+gap:12px;
+margin-top:25px
+}
+
+.btn{
+padding:11px 22px;
+border-radius:5px;
+font-size:14px;
+transition:.3s
+}
+
+.primary{
+background:#1769aa;
+color:#fff
+}
+
+.primary:hover{
+background:#0e4f82
+}
+
+.outline{
+border:1px solid #1769aa;
+color:#1769aa
+}
+
+.outline:hover{
+background:#1769aa;
+color:#fff
+}
+
+.profile{
+width:270px;
+height:270px;
+border-radius:50%;
+padding:7px;
+border:3px solid #1769aa
+}
+
+.profile img{
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover
+}
+
+
+/* RESUME */
+
+#resume{
+background:#f4f6f8
+}
+
+.resume{
+max-width:950px;
+margin:auto;
+background:#fff;
+padding:45px;
+box-shadow:0 8px 30px #00000012
+}
+
+.resume-head{
+border-bottom:2px solid #1769aa;
+padding-bottom:20px
+}
+
+.resume-head h1{
+font-size:30px
+}
+
+.resume-head h3{
+color:#1769aa;
+font-weight:normal
+}
+
+.contact{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+color:#666;
+font-size:13px;
+margin-top:10px
+}
+
+.r-section{
+margin-top:28px
+}
+
+.r-section h2{
+color:#1769aa;
+font-size:17px;
+border-bottom:1px solid #ddd;
+padding-bottom:6px;
+margin-bottom:15px;
+text-transform:uppercase
+}
+
+.summary,
+.item p{
+font-size:13px;
+color:#666
+}
+
+.item{
+margin-bottom:18px
+}
+
+.item h3{
+font-size:16px
+}
+
+.item h4{
+color:#1769aa;
+font-size:13px;
+font-weight:normal
+}
+
+.date{
+font-size:12px;
+color:#888
+}
+
+.skills{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px 30px
+}
+
+.skill{
+font-size:13px;
+padding:6px 0;
+border-bottom:1px solid #eee
+}
+
+.skill b{
+color:#1769aa
+}
+
+.tech{
+color:#1769aa!important;
+font-size:12px!important;
+margin-top:4px
+}
+
+
+/* BIO DATA */
+
+#biodata{
+background:#fff
+}
+
+.bio{
+max-width:950px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px
+}
+
+.card{
+background:#f8f9fa;
+border:1px solid #ddd;
+border-radius:7px;
+padding:25px
+}
+
+.card h3{
+color:#1769aa;
+border-bottom:1px solid #ddd;
+padding-bottom:8px;
+margin-bottom:12px
+}
+
+.row{
+display:flex;
+border-bottom:1px solid #e5e5e5;
+padding:8px 0;
+font-size:13px
+}
+
+.label{
+width:40%;
+font-weight:bold;
+color:#555
+}
+
+.value{
+width:60%;
+color:#777
+}
+
+
+/* CONTACT */
+
+.contact-card{
+grid-column:1/-1;
+background:#1769aa;
+color:#fff;
+text-align:center;
+padding:35px;
+border-radius:7px
+}
+
+.contact-card h2{
+font-size:26px
+}
+
+.contact-card p{
+color:#dcecff;
+margin:8px 0 20px
+}
+
+.contact-links{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px
+}
+
+.contact-links a{
+font-size:13px
+}
+
+.contact-links a:hover{
+text-decoration:underline
+}
+
+
+/* FOOTER */
+
+footer{
+text-align:center;
+background:#111;
+color:#777;
+padding:20px;
+font-size:12px
+}
+
+
+/* TABLET */
+
+@media(max-width:750px){
+
+.nav-links{
+gap:25px
+}
+
+.nav-links li{
+min-width:auto
+}
+
+.nav-links a{
+font-size:13px
+}
+
+.home{
+flex-direction:column-reverse;
+text-align:center
+}
+
+.home h1{
+font-size:42px
+}
+
+.home h2{
+font-size:20px
+}
+
+.buttons{
+justify-content:center
+}
+
+.profile{
+width:210px;
+height:210px
+}
+
+.resume{
+padding:25px
+}
+
+.skills,
+.bio{
+grid-template-columns:1fr
+}
+
+.contact-card{
+grid-column:auto
+}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.nav-links{
+gap:15px
+}
+
+.nav-links a{
+font-size:12px
+}
+
+.home h1{
+font-size:36px
+}
+
+.resume{
+padding:18px
+}
+
+.contact{
+flex-direction:column;
+gap:3px
+}
+
+.row{
+flex-direction:column
+}
+
+.label,
+.value{
+width:100%
+}
+
+}
